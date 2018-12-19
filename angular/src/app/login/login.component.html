@@ -1,0 +1,18 @@
+<mat-toolbar class="mat-elevation-z5" color="primary">
+    <h1>fubati</h1>
+</mat-toolbar>
+<section>
+    <img class="image" src="assets/sports.png">
+    <form (ngSubmit)="onLogin()" class="userDetails-form">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Username oder E-mail" required [(ngModel)]="user.username" name="username">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Passwort" type="password" required [(ngModel)]="user.password" name="password">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">
+            Einloggen
+        </button>
+        <a (click)="onSignUp()">Sign Up</a>
+    </form>
+</section>

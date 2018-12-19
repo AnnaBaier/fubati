@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Ort erfassen</h2>
+<mat-dialog-content>
+	<mat-form-field>
+		<input matInput placeholder="Name" [(ngModel)]="location.name" required>
+	</mat-form-field>
+	<br /><br />
+	<mat-form-field>
+		<input matInput placeholder="Adresse" [(ngModel)]="location.address" required>
+	</mat-form-field>
+	<br /><br />
+	<mat-form-field>
+		<input matInput placeholder="Beschreibung" [(ngModel)]="location.description">
+	</mat-form-field>
+	<mat-radio-group [(ngModel)]="location.category">
+		<mat-radio-button [value]="'Fußball'" color="primary">Fußball</mat-radio-button>
+		&nbsp;
+		<mat-radio-button [value]="'Tischtennis'" color="primary">Tischtennis</mat-radio-button>
+		&nbsp;
+		<mat-radio-button [value]="'Basketball'" color="primary">Basketball</mat-radio-button>
+	</mat-radio-group>
+	<br>
+	<br>
+	<label class="image-upload-container">
+		<input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)">
+	</label>
+	<div *ngIf="selectedFile" class="img-preview-container">
+		<div class="img-preview" [ngStyle]="{'background-image': 'url('+ selectedFile.src + ')'}">
+		</div>
+	</div>
+	<mat-progress-bar *ngIf="isLoading" color="primary" mode="indeterminate">
+	</mat-progress-bar>
+</mat-dialog-content>
+<mat-dialog-actions>
+	<button class="mat-raised-button mat-primary" (click)="onAddPlace()">Erfassen</button>
+	<button class="mat-raised-button" mat-button [mat-dialog-close]="true">Schließen</button>
+</mat-dialog-actions>

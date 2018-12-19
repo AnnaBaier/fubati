@@ -1,0 +1,36 @@
+
+
+#content-container {
+    display: grid;
+
+    height: 98vh;
+    width: 99vw;
+  
+    grid-template-columns: 25fr 1fr;
+    grid-template-rows: 1fr 15fr;
+  
+    grid-template-areas:
+      "head side"
+      "main main";
+}
+
+#greeting { 
+    grid-area: head;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+.button-logout
+{
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+    margin-right:0.5em;
+}
+#logout-button-container>button {
+    height: 40%;
+}
+
+#router-container {
+    grid-area: main;
+}
